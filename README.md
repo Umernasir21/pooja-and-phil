@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pooja and Phil — Author Website
 
-## Getting Started
+The official author website for *Pooja and Phil*, a debut novel by Bansi Pattni. Built with Next.js (App Router), TypeScript and Tailwind CSS.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, React Server Components, Turbopack)
+- **TypeScript**
+- **Tailwind CSS v4** (theme tokens defined in `src/app/globals.css`)
+- **next/font** for self-hosted, subset Google Fonts (Fraunces for display serif headings, Source Sans 3 for body text)
+- **next/image**, backed by `sharp`, for responsive AVIF/WebP image delivery
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) (or the port shown in the terminal).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+`npm run build` runs the TypeScript check as part of the build — a failing type error fails the build. Run `npx tsc --noEmit` on its own for a faster standalone check, and `npm run lint` for ESLint.
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+  app/                 Routes (App Router). Each folder under app/ is a page.
+  components/
+    layout/             Header, Footer
+    sections/           Page-specific composed sections (hero, trailer player, etc.)
+    ui/                 Small reusable primitives (Button, Container, SectionHeading, PageHeader)
+  content/
+    site.ts             All site copy as typed, centralized data — edit copy here, not inside components
+public/
+  images/               All production imagery, organized by category (backgrounds, characters, author, books, trailer, elements)
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Editing copy
 
-## Deploy on Vercel
+Nearly all of the site's text lives in `src/content/site.ts` as typed constants (`synopsis`, `characters`, `authorBio`, `readingGuide`, `media`, etc.). Edit copy there rather than hunting through page components. See `CONTENT_SOURCE_NOTES.md` at the project root for where every factual claim on the site came from, and the spoiler policy that shaped it — read that file before changing any synopsis, character or reading-guide copy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Adding or swapping images
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Place new images in `public/images/<category>/` and reference them with `next/image` (`src="/images/<category>/filename.png"`). Always set `width`/`height` (or use `fill` inside a sized relative container) so the browser can reserve layout space and avoid shift. See `ASSET_MAP.md` for what every current image is and where it's used.
+
+## Deployment
+
+This is a standard Next.js app and can be deployed anywhere Next.js is supported (a Node host, Vercel, or similar). It is **not** statically exported (`next export`) — it relies on the Next.js image optimizer at request time, which needs a Node runtime (or a platform's equivalent image-optimization layer).
+
+Before going live, set the real production domain in `src/content/site.ts` (`site.domain`) — it feeds `metadataBase`, Open Graph URLs, `sitemap.xml` and `robots.txt`.
+
+## What's outstanding
+
+See `LAUNCH_CHECKLIST.md` for the genuine open items (trailer video file, retailer purchase links, full author bio, contact method) that were left out of this build because they weren't supplied, rather than guessed at.

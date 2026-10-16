@@ -98,7 +98,7 @@ export const trailer = {
   heading: "Watch the Trailer",
   intro:
     "A first look at the world of Pooja and Phil — two lives from entirely different worlds, and the friendship neither of them saw coming.",
-  videoSrc: null as string | null,
+  videoSrc: "/video/pooja-and-phil-trailer.mp4" as string | null,
   captionsSrc: null as string | null,
   posters: [
     "/images/trailer/trailer-poster-opening.png",

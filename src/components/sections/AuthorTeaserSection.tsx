@@ -1,40 +1,39 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { authorBio } from "@/content/site";
+import { authorBand } from "@/content/site";
 
 export function AuthorTeaserSection() {
   return (
-    <section className="relative bg-paper" aria-label="About the author">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-80"
-        style={{ backgroundImage: "url(/images/backgrounds/05-author-ivory-paper.png)" }}
-        aria-hidden="true"
-      />
-      <Container className="relative py-20 sm:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-4 flex justify-center">
-            <div className="relative h-72 w-56 sm:h-80 sm:w-64 overflow-hidden rounded-sm shadow-xl ring-4 ring-ivory">
+    <section className="bg-ivory" aria-label="About the author">
+      <Container className="py-14 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-[0.75fr_1fr] gap-8 sm:gap-10 items-center">
+          <div className="flex justify-center sm:justify-start">
+            <div className="relative w-full max-w-[280px] sm:max-w-none aspect-[270/235] overflow-hidden rounded-sm shadow-lg">
               <Image
                 src="/images/author/bansi-pattni.png"
                 alt="Bansi Pattni, author of Pooja and Phil"
                 fill
-                sizes="(min-width: 640px) 256px, 224px"
+                sizes="(min-width: 640px) 35vw, 80vw"
                 className="object-cover"
               />
             </div>
           </div>
-          <div className="lg:col-span-8 flex flex-col gap-6">
-            <SectionHeading eyebrow="The Author" title="About Bansi Pattni" />
-            <p className="text-lg leading-relaxed text-ink/75 max-w-2xl">
-              {authorBio.short}
-            </p>
-            <div className="pt-2">
-              <Button href="/about" variant="primary">
-                About the Author
-              </Button>
+
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">
+                {authorBand.eyebrow}
+              </span>
+              <span className="h-px w-8 bg-orange/50" aria-hidden="true" />
             </div>
+
+            <h2 className="font-serif-display text-ink font-extrabold leading-[1.05] text-[2.1rem] sm:text-[1.9rem] md:text-[2.4rem] lg:text-[2.7rem]">
+              {authorBand.heading}
+            </h2>
+
+            <p className="text-[0.95rem] leading-relaxed text-ink/70 max-w-xl">
+              {authorBand.bio}
+            </p>
           </div>
         </div>
       </Container>

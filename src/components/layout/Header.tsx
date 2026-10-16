@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
-import { nav } from "@/content/site";
+import { headerNav, nav } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 
 export function Header() {
@@ -33,33 +32,26 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-ivory/95 backdrop-blur border-b border-ink/10">
-      <Container className="flex h-20 items-center justify-between">
+    <header className="sticky top-0 z-50 bg-ivory/97 backdrop-blur border-b border-ink/10">
+      <Container className="flex h-[72px] items-center justify-between gap-4">
         <Link
           href="/"
-          className="flex items-center gap-2 shrink-0"
-          aria-label="Pooja and Phil — home"
+          className="shrink-0 font-serif-display text-lg sm:text-xl font-bold uppercase tracking-[0.12em] text-ink"
+          aria-label="Bansi Pattni — home"
         >
-          <Image
-            src="/images/elements/wordmark-orange.png"
-            alt="Pooja and Phil"
-            width={220}
-            height={22}
-            priority
-            className="h-6 sm:h-7 w-auto"
-          />
+          Bansi Pattni
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Primary">
-          {nav.map((item) => {
+        <nav className="hidden sm:flex items-center gap-7" aria-label="Primary">
+          {headerNav.map((item) => {
             const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`text-sm font-semibold uppercase tracking-wide transition-colors ${
-                  active ? "text-orange" : "text-ink/80 hover:text-orange"
+                className={`text-[0.95rem] font-medium transition-colors ${
+                  active ? "text-orange" : "text-ink/75 hover:text-orange"
                 }`}
               >
                 {item.label}
@@ -68,10 +60,17 @@ export function Header() {
           })}
         </nav>
 
+        <Link
+          href="/the-book"
+          className="hidden sm:inline-flex shrink-0 items-center justify-center rounded-md bg-orange px-5 py-2.5 text-[0.85rem] font-semibold text-cream transition-colors hover:bg-rust"
+        >
+          Discover the Book →
+        </Link>
+
         <button
           ref={toggleRef}
           type="button"
-          className="lg:hidden inline-flex flex-col gap-1.5 p-2"
+          className="sm:hidden inline-flex flex-col gap-1.5 p-2"
           aria-expanded={open}
           aria-controls={menuId}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -93,12 +92,9 @@ export function Header() {
         id={menuId}
         ref={panelRef}
         hidden={!open}
-        className="lg:hidden border-t border-ink/10 bg-ivory"
+        className="sm:hidden border-t border-ink/10 bg-ivory"
       >
-        <nav
-          className="flex flex-col py-2"
-          aria-label="Primary, mobile"
-        >
+        <nav className="flex flex-col py-2" aria-label="Primary, mobile">
           {nav.map((item) => {
             const active = pathname === item.href;
             return (

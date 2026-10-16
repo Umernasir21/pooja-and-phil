@@ -10,6 +10,15 @@ export const site = {
   domain: "https://www.poojaandphil.com",
 } as const;
 
+// Compact nav shown in the desktop header, matching the approved design.
+export const headerNav = [
+  { href: "/the-book", label: "The Book" },
+  { href: "/characters", label: "Characters" },
+  { href: "/about", label: "About" },
+  { href: "/trailer", label: "Trailer" },
+] as const;
+
+// Full nav — used in the mobile menu and footer, so every page stays reachable.
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/the-book", label: "The Book" },
@@ -19,6 +28,62 @@ export const nav = [
   { href: "/about", label: "About the Author" },
   { href: "/media", label: "Media" },
 ] as const;
+
+// Homepage hero copy — matches the approved design's exact headline line
+// breaks and short supporting copy.
+export const hero = {
+  eyebrow: "The Debut Novel",
+  headline: [
+    { text: "Different", italic: false },
+    { text: "worlds.", italic: false },
+    { text: "An unexpected", italic: true },
+    { text: "friendship.", italic: true },
+  ],
+  support: [
+    "Pooja dreams of the stage.",
+    "Phil is confronting a changed life.",
+    "Neither expects the connection that follows.",
+  ],
+} as const;
+
+// Verbatim (lightly reflowed) from the client-approved back-cover blurb —
+// see CONTENT_SOURCE_NOTES.md for the full transcription and sourcing.
+export const bookIntro = {
+  eyebrow: "The Book",
+  heading: ["A story about", "finding your own way."],
+  paragraphs: [
+    "Pooja is a young, effervescent South Asian woman of Indian heritage who dreams of becoming a performer and forging a career in performing arts. However, she does not have any supporters and does not quite fit in with societal expectations. Pooja lands a job as a personal assistant and carer for a disabled septuagenarian, a successful businessman Philip Rivers.",
+    "Both Pooja and Phil are on their personal journeys, carrying the metaphorical weight of their dreams and traumas when their worlds collide. The story captures the journeys of both characters and their unconventional friendship.",
+  ],
+} as const;
+
+// Short, homepage-band character descriptions (the full profiles live on /characters).
+export const homeCharacters = {
+  eyebrow: "The Characters",
+  pooja: {
+    name: "Pooja",
+    description: "A young woman with big dreams and a love for the performing arts.",
+  },
+  phil: {
+    name: "Phil",
+    description: "A successful businessman navigating a changed life.",
+  },
+} as const;
+
+export const trailerBand = {
+  eyebrow: "Book Trailer",
+  heading: ["See where", "their story begins."],
+} as const;
+
+export const authorBand = {
+  eyebrow: "About the Author",
+  heading: "Meet Bansi Pattni.",
+  bio: "Bansi Pattni is a London-based lawyer and a first time author. Bansi is a lover of books and enjoys reading fiction. She particularly enjoys stories that touch on cultural heritage and focuses on human emotions. She is fascinated by human psychology and how it has shaped society over time. Bansi lives with her family and likes to visit new places whenever she can.",
+} as const;
+
+export const closingBand = {
+  heading: ["Every friendship", "begins somewhere."],
+} as const;
 
 export const synopsis = {
   short:

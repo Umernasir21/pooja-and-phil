@@ -1,50 +1,58 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { trailerBand } from "@/content/site";
 
 export function TrailerTeaserSection() {
   return (
-    <section className="relative bg-rust text-cream" aria-label="Trailer">
+    <section className="relative bg-rust overflow-hidden" aria-label="Trailer">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-70"
+        className="absolute inset-0 bg-cover bg-[position:60%_center]"
         style={{ backgroundImage: "url(/images/backgrounds/04-trailer-clean-sunset.png)" }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-espresso/30" aria-hidden="true" />
-      <Container className="relative py-20 sm:py-28">
-        <div className="flex flex-col items-center gap-10 text-center">
-          <SectionHeading
-            eyebrow="Watch"
-            title="See the world of Pooja and Phil"
-            description="A first look at the story — two different worlds, and the friendship neither of them saw coming."
-            align="center"
-            tone="cream"
-          />
 
-          <Link
-            href="/trailer"
-            className="group relative block w-full max-w-2xl overflow-hidden rounded-sm shadow-2xl focus-visible:outline-3 focus-visible:outline-saffron"
-            aria-label="Watch the trailer for Pooja and Phil"
-          >
+      <Container className="relative py-10 sm:py-8 lg:py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-[0.55fr_1fr] gap-6 sm:gap-8 items-center">
+          <div className="flex justify-center sm:justify-start">
             <Image
-              src="/images/trailer/trailer-poster-opening.png"
-              alt="Trailer poster for Pooja and Phil"
-              width={1280}
-              height={720}
-              className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              src="/images/books/book-standing-with-shadow.png"
+              alt="Pooja and Phil, book cover standing upright"
+              width={1600}
+              height={2000}
+              className="h-auto w-full max-w-[180px] sm:max-w-none drop-shadow-2xl"
             />
-            <span className="absolute inset-0 flex items-center justify-center bg-ink/20 transition-colors group-hover:bg-ink/35">
-              <Image
-                src="/images/elements/play-ivory.png"
-                alt=""
-                aria-hidden="true"
-                width={256}
-                height={256}
-                className="h-16 w-16 sm:h-20 sm:w-20 drop-shadow-lg transition-transform duration-300 group-hover:scale-110"
-              />
-            </span>
-          </Link>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-cream/90">
+                {trailerBand.eyebrow}
+              </span>
+              <span className="h-px w-8 bg-cream/50" aria-hidden="true" />
+            </div>
+
+            <h2 className="font-serif-display text-ink font-bold leading-[1.05] text-[1.9rem] sm:text-[1.7rem] md:text-[2.1rem] lg:text-[2.4rem]">
+              {trailerBand.heading.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </h2>
+
+            <Link
+              href="/trailer"
+              className="group inline-flex items-center gap-3 w-fit"
+              aria-label="Watch the trailer for Pooja and Phil"
+            >
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-espresso text-cream shadow-md transition-transform duration-200 group-hover:scale-105">
+                <svg viewBox="0 0 24 24" className="h-4 w-4 translate-x-[1px]" fill="currentColor" aria-hidden="true">
+                  <path d="M6 4l15 8-15 8V4z" />
+                </svg>
+              </span>
+              <span className="text-cream font-semibold">Watch the Trailer</span>
+            </Link>
+          </div>
         </div>
       </Container>
     </section>

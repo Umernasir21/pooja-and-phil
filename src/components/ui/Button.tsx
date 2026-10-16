@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { type ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost-cream";
+type Variant = "primary" | "secondary" | "ghost-cream" | "cream-pill";
 
 const variantClasses: Record<Variant, string> = {
-  primary:
-    "bg-orange text-cream hover:bg-rust focus-visible:bg-rust shadow-sm",
+  primary: "rounded-md bg-orange text-cream hover:bg-rust shadow-sm",
   secondary:
-    "bg-transparent text-ink border border-ink/30 hover:border-orange hover:text-orange",
+    "rounded-md bg-transparent text-ink border border-ink/25 hover:border-orange hover:text-orange",
   "ghost-cream":
-    "bg-transparent text-cream border border-cream/50 hover:border-saffron hover:text-saffron",
+    "rounded-md bg-transparent text-cream border border-cream/50 hover:border-saffron hover:text-saffron",
+  "cream-pill": "rounded-full bg-cream text-ink hover:bg-white shadow-sm",
 };
 
 export function Button({
@@ -25,7 +25,7 @@ export function Button({
   className?: string;
   [key: string]: unknown;
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-sm px-7 py-3 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${variantClasses[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 px-6 py-3 text-[0.95rem] font-semibold transition-colors duration-200 ${variantClasses[variant]} ${className}`;
 
   const isExternal = href.startsWith("http");
 

@@ -43,7 +43,7 @@ export default function AboutPage() {
                 alt="Bansi Pattni, author of Pooja and Phil"
                 fill
                 sizes="(min-width: 640px) 320px, 288px"
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
             </div>

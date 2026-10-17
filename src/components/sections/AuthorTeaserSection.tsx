@@ -14,7 +14,7 @@ export function AuthorTeaserSection() {
                 alt="Bansi Pattni, author of Pooja and Phil"
                 fill
                 sizes="(min-width: 640px) 35vw, 80vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
           </div>

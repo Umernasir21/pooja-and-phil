@@ -42,7 +42,7 @@ export function Header() {
           Bansi Pattni
         </Link>
 
-        <nav className="hidden sm:flex items-center gap-7" aria-label="Primary">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-6" aria-label="Primary">
           {headerNav.map((item) => {
             const active = pathname === item.href;
             return (
@@ -50,7 +50,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`text-[0.95rem] font-medium transition-colors ${
+                className={`text-[0.85rem] xl:text-[0.9rem] font-medium whitespace-nowrap transition-colors ${
                   active ? "text-orange" : "text-ink/75 hover:text-orange"
                 }`}
               >
@@ -62,7 +62,7 @@ export function Header() {
 
         <Link
           href="/the-book"
-          className="hidden sm:inline-flex shrink-0 items-center justify-center rounded-md bg-orange px-5 py-2.5 text-[0.85rem] font-semibold text-cream transition-colors hover:bg-rust"
+          className="hidden lg:inline-flex shrink-0 items-center justify-center rounded-md bg-orange px-5 py-2.5 text-[0.85rem] font-semibold text-cream transition-colors hover:bg-rust"
         >
           Discover the Book →
         </Link>
@@ -70,7 +70,7 @@ export function Header() {
         <button
           ref={toggleRef}
           type="button"
-          className="sm:hidden inline-flex flex-col gap-1.5 p-2"
+          className="lg:hidden inline-flex flex-col gap-1.5 p-2"
           aria-expanded={open}
           aria-controls={menuId}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -92,7 +92,7 @@ export function Header() {
         id={menuId}
         ref={panelRef}
         hidden={!open}
-        className="sm:hidden border-t border-ink/10 bg-ivory"
+        className="lg:hidden border-t border-ink/10 bg-ivory"
       >
         <nav className="flex flex-col py-2" aria-label="Primary, mobile">
           {nav.map((item) => {

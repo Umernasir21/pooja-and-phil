@@ -10,12 +10,14 @@ export const site = {
   domain: "https://www.poojaandphil.com",
 } as const;
 
-// Compact nav shown in the desktop header, matching the approved design.
+// Nav shown in the desktop header — every page, nothing dropped.
 export const headerNav = [
   { href: "/the-book", label: "The Book" },
   { href: "/characters", label: "Characters" },
-  { href: "/about", label: "About" },
   { href: "/trailer", label: "Trailer" },
+  { href: "/reading-guide", label: "Reading Guide" },
+  { href: "/about", label: "About" },
+  { href: "/media", label: "Media" },
 ] as const;
 
 // Full nav — used in the mobile menu and footer, so every page stays reachable.

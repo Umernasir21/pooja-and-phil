@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local submission storage (newsletter/contact) — see LAUNCH_CHECKLIST.md
+.data/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

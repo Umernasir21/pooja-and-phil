@@ -7,10 +7,17 @@ import { ReadingGuideToc } from "@/components/sections/ReadingGuideToc";
 import { banners } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Reading Guide",
+  title: "Reading Guide — Book Club Discussion Questions",
   description:
-    "Discussion questions for Pooja and Phil, grouped by theme — spoiler-free by default, with an optional spoiler section for groups who have finished the book.",
+    "Spoiler-free book club discussion questions for Pooja and Phil, grouped by theme — friendship, ambition, identity and belonging — with a bonus spoiler section for groups who've finished the book.",
   alternates: { canonical: "/reading-guide" },
+  openGraph: {
+    title: "Reading Guide — Pooja and Phil Discussion Questions",
+    description:
+      "Spoiler-free book club questions for Pooja and Phil, grouped by theme, with a closed-by-default spoiler section for readers who've finished the book.",
+    url: "/reading-guide",
+    type: "website",
+  },
 };
 
 export default function ReadingGuidePage() {

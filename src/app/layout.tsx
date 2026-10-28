@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   },
   description:
     "Pooja and Phil, a debut novel by Bansi Pattni — the story of an unexpected friendship between a young British Asian dreamer and a guarded, self-made businessman.",
+  keywords: [
+    "Pooja and Phil",
+    "Bansi Pattni",
+    "Bansi Pattni debut novel",
+    "British Asian fiction",
+    "friendship novel",
+    "contemporary fiction book club",
+  ],
   openGraph: {
     title: `${site.bookTitle} | A Novel by ${site.name}`,
     description:

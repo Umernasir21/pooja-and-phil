@@ -7,10 +7,18 @@ import { StillsLightbox } from "@/components/sections/StillsLightbox";
 import { trailer, synopsis, banners } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Trailer",
+  title: "Watch the Official Book Trailer",
   description:
-    "Watch the trailer for Pooja and Phil, a debut novel by Bansi Pattni about an unexpected friendship.",
+    "Watch the official trailer for Pooja and Phil, Bansi Pattni's debut novel about an unexpected friendship between two people from entirely different worlds.",
   alternates: { canonical: "/trailer" },
+  openGraph: {
+    title: "Watch the Pooja and Phil Book Trailer",
+    description:
+      "An unexpected friendship between two people from entirely different worlds. Watch the official trailer for Pooja and Phil.",
+    url: "/trailer",
+    type: "video.other",
+    images: ["/images/trailer/trailer-poster-opening.png"],
+  },
 };
 
 export default function TrailerPage() {

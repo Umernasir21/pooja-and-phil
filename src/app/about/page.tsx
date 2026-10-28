@@ -6,10 +6,18 @@ import { Button } from "@/components/ui/Button";
 import { authorBio, banners, site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "About the Author",
+  title: "About Author Bansi Pattni",
   description:
-    "Bansi Pattni is a debut novelist. Pooja and Phil is her first novel.",
+    "Meet Bansi Pattni, a London-based lawyer and first-time novelist. Her debut novel Pooja and Phil explores friendship, identity and belonging across generations.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Author Bansi Pattni",
+    description:
+      "Bansi Pattni is a London-based lawyer and first-time novelist. Pooja and Phil is her debut novel.",
+    url: "/about",
+    type: "profile",
+    images: ["/images/author/bansi-pattni.png"],
+  },
 };
 
 const personJsonLd = {

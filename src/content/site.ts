@@ -12,6 +12,11 @@ export const site = {
   // Swap this back to the custom domain once it's actually live — see
   // LAUNCH_CHECKLIST.md.
   domain: "https://pooja-and-phil.vercel.app",
+  // Verified 2026-10-28 by fetching the page directly: title "Pooja and
+  // Phil", author "Pattni, Bansi", ISBN-13 9798950507687 — matches the
+  // ISBN already used elsewhere on this site.
+  amazonUrl: "https://www.amazon.co.uk/Pooja-Phil-Bansi-Pattni/dp/B0HCDZB8VS",
+  contactEmail: "info@bansipattni.com",
 } as const;
 
 // Nav shown in the desktop header — every page, nothing dropped.
@@ -21,6 +26,7 @@ export const headerNav = [
   { href: "/trailer", label: "Trailer" },
   { href: "/reading-guide", label: "Reading Guide" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 // Full nav — used in the mobile menu and footer, so every page stays reachable.
@@ -31,6 +37,7 @@ export const nav = [
   { href: "/trailer", label: "Trailer" },
   { href: "/reading-guide", label: "Reading Guide" },
   { href: "/about", label: "About the Author" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 // Homepage hero copy — matches the approved design's exact headline line

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
@@ -34,12 +35,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-ivory/97 backdrop-blur border-b border-ink/10 print:hidden">
       <Container className="flex h-[72px] items-center justify-between gap-4">
-        <Link
-          href="/"
-          className="shrink-0 font-serif-display text-lg sm:text-xl font-bold uppercase tracking-[0.12em] text-ink"
-          aria-label="Bansi Pattni — home"
-        >
-          Bansi Pattni
+        <Link href="/" className="shrink-0" aria-label="Bansi Pattni — home">
+          <Image
+            src="/images/brand/bansi-pattni-logo.png"
+            alt="Bansi Pattni, Author"
+            width={2000}
+            height={672}
+            priority
+            className="h-auto w-[150px] sm:w-[175px] lg:w-[200px] object-contain"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-5 xl:gap-6" aria-label="Primary">

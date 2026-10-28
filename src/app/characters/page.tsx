@@ -6,10 +6,18 @@ import { Button } from "@/components/ui/Button";
 import { characters, banners } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Characters",
+  title: "Meet Pooja & Phil — The Characters",
   description:
-    "Meet Pooja and Phil — a young British Asian dreamer and a self-made businessman relearning how to live — the two voices at the heart of Bansi Pattni's debut novel.",
+    "Get to know Pooja, a young dreamer chasing a life in dance and theatre, and Phil, a self-made businessman relearning how to live — the two voices behind Pooja and Phil.",
   alternates: { canonical: "/characters" },
+  openGraph: {
+    title: "Meet Pooja & Phil — The Characters",
+    description:
+      "A young British Asian dreamer and a self-made businessman relearning how to live. Meet the two voices at the heart of Bansi Pattni's debut novel.",
+    url: "/characters",
+    type: "website",
+    images: ["/images/characters/pooja-transparent.png"],
+  },
 };
 
 function CharacterProfile({

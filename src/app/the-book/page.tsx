@@ -9,10 +9,18 @@ import { ReadingSample } from "@/components/sections/ReadingSample";
 import { synopsis, site, banners, characters } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "The Book",
+  title: "The Book — Synopsis, Themes & Free Chapter",
   description:
-    "Pooja and Phil: an unexpected friendship between a young British Asian dreamer and a self-made businessman relearning how to live. Read the synopsis and an excerpt from Chapter One.",
+    "Read the full synopsis of Pooja and Phil, explore its themes of friendship, ambition and identity, and try a free excerpt from Chapter One — Bansi Pattni's debut novel.",
   alternates: { canonical: "/the-book" },
+  openGraph: {
+    title: "Pooja and Phil — Synopsis, Themes & Free Chapter",
+    description:
+      "Read the synopsis, explore the themes, and try a free excerpt from Pooja and Phil, Bansi Pattni's debut novel about an unexpected friendship.",
+    url: "/the-book",
+    type: "book",
+    images: ["/images/books/book-cover-front.png"],
+  },
 };
 
 const bookJsonLd = {
@@ -110,7 +118,10 @@ export default function TheBookPage() {
               </p>
             ))}
 
-<div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4">
+              <Button href={site.amazonUrl} variant="primary" target="_blank" rel="noreferrer noopener">
+                Buy on Amazon
+              </Button>
               <Button href="/trailer" variant="secondary">
                 Watch the Trailer
               </Button>
@@ -122,14 +133,52 @@ export default function TheBookPage() {
         </Container>
       </section>
 
-      <section className="bg-paper py-16 sm:py-24">
-        <Container>
-          <h2 className="font-serif-display text-3xl font-medium text-ink text-center">
-            At the Heart of the Story
-          </h2>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10 max-w-3xl mx-auto">
-            {synopsis.themeList.map((theme) => (
-              <div key={theme.title} className="flex gap-4">
+      <section className="relative overflow-hidden bg-paper" aria-label="At the heart of the story">
+        <div className="hidden sm:block relative h-[340px]">
+          <Image
+            src="/images/editorial/heart-of-story.png"
+            alt=""
+            fill
+            sizes="100vw"
+            style={{ objectPosition: "78% center" }}
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-paper via-paper/75 to-transparent"
+            aria-hidden="true"
+          />
+          <Container className="relative z-10 flex h-full items-center">
+            <h2 className="font-serif-display text-3xl md:text-4xl font-medium text-ink max-w-sm">
+              At the Heart of the Story
+            </h2>
+          </Container>
+        </div>
+
+        <div className="sm:hidden">
+          <Container className="py-10">
+            <h2 className="font-serif-display text-2xl font-medium text-ink">
+              At the Heart of the Story
+            </h2>
+          </Container>
+          <div className="relative h-[180px]">
+            <Image
+              src="/images/editorial/heart-of-story.png"
+              alt=""
+              fill
+              sizes="100vw"
+              style={{ objectPosition: "82% center" }}
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <Container className="py-14 sm:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-10 max-w-3xl mx-auto">
+            {synopsis.themeList.map((theme, i) => (
+              <div
+                key={theme.title}
+                className={`flex gap-4 ${i > 0 ? "border-t border-ink/10 pt-8 sm:border-t-0 sm:pt-0" : ""} ${i >= 2 ? "sm:border-t sm:border-ink/10 sm:pt-8" : ""}`}
+              >
                 <span className="shrink-0 text-orange">{themeIcons[theme.title]}</span>
                 <div>
                   <h3 className="font-serif-display text-lg font-medium text-ink">

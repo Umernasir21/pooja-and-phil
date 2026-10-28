@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { PageHeader } from "@/components/ui/PageHeader";
+import { EditorialBanner } from "@/components/ui/EditorialBanner";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { characters } from "@/content/site";
+import { characters, banners } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Characters",
@@ -15,9 +15,11 @@ export const metadata: Metadata = {
 function CharacterProfile({
   character,
   reverse = false,
+  extra,
 }: {
   character: (typeof characters)["pooja"] | (typeof characters)["phil"];
   reverse?: boolean;
+  extra?: { title: string; body: string };
 }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -52,35 +54,105 @@ function CharacterProfile({
         <blockquote className="mt-2 border-l-4 border-orange pl-5 font-serif-display text-xl italic text-ink/80">
           &ldquo;{character.quote}&rdquo;
         </blockquote>
+        {extra ? (
+          <div className="mt-2 rounded-sm bg-paper/70 p-5">
+            <h3 className="font-serif-display text-base font-semibold text-ink">
+              {extra.title}
+            </h3>
+            <p className="mt-1.5 text-ink/70 leading-relaxed">{extra.body}</p>
+          </div>
+        ) : null}
       </div>
     </div>
   );
 }
 
 export default function CharactersPage() {
+  const b = banners.characters;
+
   return (
     <>
-      <PageHeader
-        eyebrow="Characters"
-        title="Two different worlds"
+      <EditorialBanner
+        image={b.image}
+        theme={b.theme}
+        eyebrow={b.eyebrow}
+        heading={b.heading}
         description="A young dreamer determined to make a life in dance and theatre. A self-made businessman relearning how to live. Here's who they are before their story begins."
-        background="/images/backgrounds/03-characters-espresso.png"
-        tone="cream"
+        objectPosition={b.objectPosition}
+        mobileObjectPosition={b.mobileObjectPosition}
+        foreground={
+          <div className="hidden lg:block absolute inset-0 z-[1]">
+            <div className="absolute bottom-0 left-[58%] h-[88%] w-[20%] overflow-hidden">
+              <Image
+                src={characters.pooja.image}
+                alt="Pooja"
+                fill
+                sizes="20vw"
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="absolute bottom-0 left-[78%] h-[80%] w-[20%] overflow-hidden">
+              <Image
+                src={characters.phil.image}
+                alt="Phil"
+                fill
+                sizes="20vw"
+                className="object-cover object-top"
+              />
+            </div>
+          </div>
+        }
+        mobileForeground={
+          <div className="absolute inset-0 flex items-end justify-center gap-2 bg-espresso">
+            <div className="relative h-[85%] w-[44%] overflow-hidden">
+              <Image src={characters.pooja.image} alt="Pooja" fill sizes="50vw" className="object-cover object-top" />
+            </div>
+            <div className="relative h-[78%] w-[44%] overflow-hidden">
+              <Image src={characters.phil.image} alt="Phil" fill sizes="50vw" className="object-cover object-top" />
+            </div>
+          </div>
+        }
       />
 
       <section className="bg-ivory py-16 sm:py-24">
         <Container className="flex flex-col gap-24">
-          <CharacterProfile character={characters.pooja} />
-          <CharacterProfile character={characters.phil} reverse />
+          <CharacterProfile
+            character={characters.pooja}
+            extra={{
+              title: "Ambitions and pressures",
+              body: "Pooja's family equates a degree and a stable job with love and protection — and she's spent her whole life feeling like the one who didn't live up to that. Her dream of dance and theatre isn't rebellion for its own sake; it's the one thing that's unmistakably hers.",
+            }}
+          />
+          <CharacterProfile
+            character={characters.phil}
+            reverse
+            extra={{
+              title: "A life relearning itself",
+              body: "Phil built Ray and Co. on total control — of his time, his company, his image. The accident didn't just change what his body can do; it took away the one thing he always trusted to fix everything: himself.",
+            }}
+          />
         </Container>
       </section>
 
-      <section className="bg-paper py-16 sm:py-20">
-        <Container className="max-w-2xl text-center flex flex-col items-center gap-6">
-          <h2 className="font-serif-display text-2xl sm:text-3xl font-medium text-ink">
-            Two lives from entirely different worlds
-          </h2>
-          <p className="text-lg leading-relaxed text-ink/70">
+      <section className="relative bg-paper py-16 sm:py-20 overflow-hidden">
+        <Container className="flex flex-col items-center gap-8 text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
+            The Friendship
+          </span>
+
+          <div className="relative flex items-center gap-6 sm:gap-10">
+            <div className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-full ring-4 ring-ivory shadow-md">
+              <Image src={characters.pooja.image} alt="" fill sizes="96px" className="object-cover object-top" />
+            </div>
+            <svg viewBox="0 0 120 24" className="h-4 w-20 sm:w-28 text-orange/60" fill="none" aria-hidden="true">
+              <path d="M2 12c20-14 40 14 58 0s38-14 58 0" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+            <div className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-full ring-4 ring-ivory shadow-md">
+              <Image src={characters.phil.image} alt="" fill sizes="96px" className="object-cover object-top" />
+            </div>
+          </div>
+
+          <p className="max-w-2xl text-lg leading-relaxed text-ink/70">
             One is young, bold and determined to be heard. The other has spent
             a lifetime being heard and is only just learning how to listen.
             What happens when their worlds collide is a story about the

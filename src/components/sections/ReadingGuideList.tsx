@@ -2,6 +2,10 @@
 
 import { readingGuide } from "@/content/site";
 
+export function slugify(title: string) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
 export function ReadingGuideList() {
   return (
     <div className="flex flex-col gap-14 print:gap-8">
@@ -15,12 +19,19 @@ export function ReadingGuideList() {
         </button>
       </div>
 
-      {readingGuide.map((group) => {
+      {readingGuide.map((group, index) => {
         const hasSpoilers = group.questions.some((q) => q.spoiler);
         return (
-          <section key={group.title} className="flex flex-col gap-5">
+          <section
+            key={group.title}
+            id={slugify(group.title)}
+            className="flex flex-col gap-5 scroll-mt-28 border-t border-ink/10 pt-10 first:border-t-0 first:pt-0"
+          >
             <div>
-              <h2 className="font-serif-display text-2xl sm:text-3xl font-medium text-ink">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h2 className="mt-2 font-serif-display text-2xl sm:text-3xl font-medium text-ink">
                 {group.title}
               </h2>
               <p className="mt-2 text-ink/70 leading-relaxed max-w-2xl">

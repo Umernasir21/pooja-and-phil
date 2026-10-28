@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { PageHeader } from "@/components/ui/PageHeader";
+import { EditorialBanner } from "@/components/ui/EditorialBanner";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { VideoPlayer } from "@/components/sections/VideoPlayer";
-import { trailer, synopsis } from "@/content/site";
+import { StillsLightbox } from "@/components/sections/StillsLightbox";
+import { trailer, synopsis, banners } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Trailer",
@@ -14,17 +14,25 @@ export const metadata: Metadata = {
 };
 
 export default function TrailerPage() {
+  const b = banners.trailer;
+  const stillImages = trailer.posters.map((src, i) => ({
+    src,
+    label: `Trailer still ${i + 1}`,
+  }));
+
   return (
     <>
-      <PageHeader
-        eyebrow="Watch"
-        title={trailer.heading}
+      <EditorialBanner
+        image={b.image}
+        theme={b.theme}
+        eyebrow={b.eyebrow}
+        heading={b.heading}
         description={trailer.intro}
-        background="/images/backgrounds/04-trailer-clean-sunset.png"
-        tone="cream"
+        objectPosition={b.objectPosition}
+        mobileObjectPosition={b.mobileObjectPosition}
       />
 
-      <section className="bg-ivory py-16 sm:py-24">
+      <section className="bg-espresso py-16 sm:py-20">
         <Container className="max-w-4xl">
           <VideoPlayer
             videoSrc={trailer.videoSrc}
@@ -32,22 +40,24 @@ export default function TrailerPage() {
             posterSrc={trailer.posters[0]}
             title="Pooja and Phil"
           />
+        </Container>
+      </section>
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {trailer.posters.map((src, i) => (
-              <div key={src} className="relative aspect-video overflow-hidden rounded-sm">
-                <Image
-                  src={src}
-                  alt={`Scene still ${i + 1} from the Pooja and Phil trailer`}
-                  fill
-                  sizes="(min-width: 640px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
+      <section className="bg-ivory py-16 sm:py-20">
+        <Container className="max-w-4xl">
+          <h2 className="font-serif-display text-2xl font-medium text-ink mb-2">
+            Trailer Stills
+          </h2>
+          <p className="text-ink/60 mb-8">
+            Three stills from the trailer. Select one to view it larger.
+          </p>
+          <StillsLightbox images={stillImages} title="Pooja and Phil trailer" />
+        </Container>
+      </section>
 
-          <div className="mt-14 flex flex-col gap-4 border-t border-ink/10 pt-10">
+      <section className="bg-ivory pb-16 sm:pb-24">
+        <Container className="max-w-4xl">
+          <div className="flex flex-col gap-4 border-t border-ink/10 pt-10">
             <h2 className="font-serif-display text-2xl font-medium text-ink">
               About the Book
             </h2>

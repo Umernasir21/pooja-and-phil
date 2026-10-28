@@ -7,7 +7,11 @@ export const site = {
   name: "Bansi Pattni",
   bookTitle: "Pooja and Phil",
   tagline: "Different worlds. An unexpected friendship.",
-  domain: "https://www.poojaandphil.com",
+  // Verified 2026-10-28: poojaandphil.com does not resolve (connection
+  // failure). The live, resolving deployment is the Vercel URL below.
+  // Swap this back to the custom domain once it's actually live — see
+  // LAUNCH_CHECKLIST.md.
+  domain: "https://pooja-and-phil.vercel.app",
 } as const;
 
 // Nav shown in the desktop header — every page, nothing dropped.
@@ -85,6 +89,60 @@ export const authorBand = {
 
 export const closingBand = {
   heading: ["Every friendship", "begins somewhere."],
+} as const;
+
+// Editorial banner copy for the inner-page graphics supplied 2026-10-28.
+// Theme/object-position were set by visually inspecting each banner — see
+// ASSET_MAP.md for the discrepancy against the supplied placement table.
+export const banners = {
+  theBook: {
+    image: "/images/editorial/01-book-story-banner.png",
+    theme: "light" as const,
+    eyebrow: "The Book",
+    heading: "A story about finding your own way.",
+    objectPosition: "75% 45%",
+    mobileObjectPosition: "80% 40%",
+  },
+  characters: {
+    image: "/images/editorial/02-characters-banner.png",
+    theme: "dark" as const,
+    eyebrow: "The Characters",
+    heading: "Two lives. An unexpected connection.",
+    objectPosition: "70% center",
+    mobileObjectPosition: "75% center",
+  },
+  about: {
+    image: "/images/editorial/03-author-banner.png",
+    theme: "light" as const,
+    eyebrow: "The Author",
+    heading: "The author behind the friendship.",
+    objectPosition: "72% center",
+    mobileObjectPosition: "78% center",
+  },
+  readingGuide: {
+    image: "/images/editorial/04-reading-guide-banner.png",
+    theme: "light" as const,
+    eyebrow: "Book Clubs",
+    heading: "Good stories start conversations.",
+    objectPosition: "75% center",
+    mobileObjectPosition: "80% center",
+  },
+  trailer: {
+    image: "/images/editorial/05-trailer-cinema-banner.png",
+    theme: "dark" as const,
+    eyebrow: "Watch",
+    heading: "Step into their story.",
+    objectPosition: "65% center",
+    mobileObjectPosition: "70% center",
+  },
+  media: {
+    image: "/images/editorial/06-media-press-banner.png",
+    theme: "light" as const,
+    eyebrow: "Press & Media",
+    heading: "The story, ready to share.",
+    objectPosition: "72% center",
+    mobileObjectPosition: "78% center",
+  },
 } as const;
 
 export const synopsis = {
@@ -282,11 +340,19 @@ export const media = {
       label: "Author photograph",
       href: "/images/author/bansi-pattni.png",
       description: "High-resolution author photograph of Bansi Pattni.",
+      meta: "PNG · 1362×2048 · 2.3MB",
     },
     {
       label: "Book cover (front)",
       href: "/images/books/book-cover-front.png",
       description: "Front cover artwork for Pooja and Phil.",
+      meta: "PNG · 1334×2048 · 2.6MB",
+    },
+    {
+      label: "Book mockup (standing)",
+      href: "/images/books/book-standing-with-shadow.png",
+      description: "Approved standing book mockup with shadow.",
+      meta: "PNG · 1600×2000 · 2.2MB",
     },
   ],
 } as const;

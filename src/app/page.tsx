@@ -4,6 +4,7 @@ import { BookIntroSection } from "@/components/sections/BookIntroSection";
 import { CharactersSection } from "@/components/sections/CharactersSection";
 import { TrailerTeaserSection } from "@/components/sections/TrailerTeaserSection";
 import { AuthorTeaserSection } from "@/components/sections/AuthorTeaserSection";
+import { ReadingGuideTeaser } from "@/components/sections/ReadingGuideTeaser";
 import { ClosingSection } from "@/components/sections/ClosingSection";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function HomePage() {
       <CharactersSection />
       <TrailerTeaserSection />
       <AuthorTeaserSection />
+      <ReadingGuideTeaser />
       <ClosingSection />
     </>
   );

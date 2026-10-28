@@ -32,7 +32,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-ivory/97 backdrop-blur border-b border-ink/10">
+    <header className="sticky top-0 z-50 bg-ivory/97 backdrop-blur border-b border-ink/10 print:hidden">
       <Container className="flex h-[72px] items-center justify-between gap-4">
         <Link
           href="/"

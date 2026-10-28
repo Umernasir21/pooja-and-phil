@@ -5,7 +5,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-espresso text-cream overflow-hidden border-t border-orange/40">
+    <footer className="relative bg-espresso text-cream overflow-hidden border-t border-orange/40 print:hidden">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-50"
         style={{ backgroundImage: "url(/images/backgrounds/07-footer-espresso.png)" }}

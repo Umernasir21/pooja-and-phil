@@ -56,7 +56,7 @@ export default function ReadingGuidePage() {
 
       <section className="bg-paper py-14 print:hidden">
         <Container className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-          <p className="text-ink/70">Want more context before your discussion?</p>
+          <p className="text-lg text-ink/70">Want more context before your discussion?</p>
           <div className="flex gap-3">
             <Button href="/characters" variant="secondary">
               Meet the Characters

@@ -21,7 +21,6 @@ export const headerNav = [
   { href: "/trailer", label: "Trailer" },
   { href: "/reading-guide", label: "Reading Guide" },
   { href: "/about", label: "About" },
-  { href: "/media", label: "Media" },
 ] as const;
 
 // Full nav — used in the mobile menu and footer, so every page stays reachable.
@@ -32,7 +31,6 @@ export const nav = [
   { href: "/trailer", label: "Trailer" },
   { href: "/reading-guide", label: "Reading Guide" },
   { href: "/about", label: "About the Author" },
-  { href: "/media", label: "Media" },
 ] as const;
 
 // Homepage hero copy — matches the approved design's exact headline line
@@ -134,14 +132,6 @@ export const banners = {
     heading: "Step into their story.",
     objectPosition: "65% center",
     mobileObjectPosition: "70% center",
-  },
-  media: {
-    image: "/images/editorial/06-media-press-banner.png",
-    theme: "light" as const,
-    eyebrow: "Press & Media",
-    heading: "The story, ready to share.",
-    objectPosition: "72% center",
-    mobileObjectPosition: "78% center",
   },
 } as const;
 
@@ -328,31 +318,3 @@ export const readingGuide: DiscussionGroup[] = [
   },
 ];
 
-export const media = {
-  shortBio:
-    "Bansi Pattni is a lawyer based in London and a first-time author. Pooja and Phil is her debut novel.",
-  extendedBio:
-    "Bansi Pattni is a lawyer based in London and a first-time author. A lifelong lover of fiction drawn to stories of cultural heritage and human emotion, she began work on Pooja and Phil — the story of an unexpected friendship between a young British Asian dreamer chasing a career in dance and theatre, and a guarded, self-made businessman relearning how to live after a life-changing accident — as her debut novel. She shares updates on her writing on Instagram (@bansi_pattni) and Substack.",
-  bookDescription:
-    "Pooja Patel is twenty-one, working a Tesco checkout and dreaming of choreographing a West End musical. Philip Rivers is a self-made businessman relearning how to live since the accident that put him in a wheelchair. When Pooja becomes his personal assistant, an unexpected friendship forms between two people from entirely different worlds — one that asks both of them to be braver than they planned to be.",
-  downloads: [
-    {
-      label: "Author photograph",
-      href: "/images/author/bansi-pattni.png",
-      description: "High-resolution author photograph of Bansi Pattni.",
-      meta: "PNG · 1362×2048 · 2.3MB",
-    },
-    {
-      label: "Book cover (front)",
-      href: "/images/books/book-cover-front.png",
-      description: "Front cover artwork for Pooja and Phil.",
-      meta: "PNG · 1334×2048 · 2.6MB",
-    },
-    {
-      label: "Book mockup (standing)",
-      href: "/images/books/book-standing-with-shadow.png",
-      description: "Approved standing book mockup with shadow.",
-      meta: "PNG · 1600×2000 · 2.2MB",
-    },
-  ],
-} as const;

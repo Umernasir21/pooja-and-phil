@@ -78,24 +78,13 @@ export default function TheBookPage() {
           </div>
         }
         foreground={
-          <div className="hidden lg:block absolute bottom-0 right-[6%] w-[16%] z-10">
+          <div className="banner-book">
             <Image
-              src="/images/books/book-standing-with-shadow.png"
+              src="/images/books/book-front-premium.png"
               alt="Pooja and Phil, book cover standing upright"
-              width={1600}
-              height={2000}
+              width={1012}
+              height={1554}
               className="h-auto w-full drop-shadow-2xl"
-            />
-          </div>
-        }
-        mobileForeground={
-          <div className="absolute inset-0 flex items-end justify-center bg-ivory">
-            <Image
-              src="/images/books/book-standing-with-shadow.png"
-              alt="Pooja and Phil, book cover standing upright"
-              width={1600}
-              height={2000}
-              className="h-[92%] w-auto drop-shadow-xl"
             />
           </div>
         }
@@ -105,10 +94,10 @@ export default function TheBookPage() {
         <Container className="grid grid-cols-1 sm:grid-cols-[0.45fr_0.55fr] gap-12 items-center">
           <div className="flex justify-center sm:justify-start">
             <Image
-              src="/images/books/book-standing-transparent.png"
+              src="/images/books/book-front-premium.png"
               alt="Pooja and Phil, book cover standing upright"
-              width={1600}
-              height={2000}
+              width={1012}
+              height={1554}
               className="h-auto w-full max-w-xs drop-shadow-2xl"
             />
           </div>
@@ -121,23 +110,7 @@ export default function TheBookPage() {
               </p>
             ))}
 
-            <details className="group mt-2 rounded-sm border border-ink/10">
-              <summary className="cursor-pointer list-none px-5 py-3 text-sm font-semibold uppercase tracking-wide text-ink/70 hover:text-orange flex items-center justify-between">
-                View full cover artwork
-                <span className="text-orange transition-transform group-open:rotate-180">⌄</span>
-              </summary>
-              <div className="px-5 pb-5">
-                <Image
-                  src="/images/books/book-cover-full-wrap.png"
-                  alt="Pooja and Phil, full cover wrap"
-                  width={2048}
-                  height={1506}
-                  className="h-auto w-full rounded-sm"
-                />
-              </div>
-            </details>
-
-            <div className="flex flex-wrap gap-4">
+<div className="flex flex-wrap gap-4">
               <Button href="/trailer" variant="secondary">
                 Watch the Trailer
               </Button>
@@ -181,12 +154,12 @@ export default function TheBookPage() {
 
       <section className="bg-espresso py-16 sm:py-20">
         <Container className="flex flex-col sm:flex-row items-center gap-10">
-          <div className="flex -space-x-6 shrink-0">
-            <div className="relative h-32 w-24 rounded-full overflow-hidden ring-4 ring-espresso">
-              <Image src={characters.pooja.image} alt="" fill sizes="96px" className="object-cover object-top" />
+          <div className="flex gap-3 shrink-0">
+            <div className="relative h-44 w-28">
+              <Image src={characters.pooja.image} alt="" fill sizes="96px" className="object-contain" />
             </div>
-            <div className="relative h-32 w-24 rounded-full overflow-hidden ring-4 ring-espresso">
-              <Image src={characters.phil.image} alt="" fill sizes="96px" className="object-cover object-top" />
+            <div className="relative h-44 w-28">
+              <Image src={characters.phil.image} alt="" fill sizes="96px" className="object-contain" />
             </div>
           </div>
           <div className="flex-1">
@@ -194,7 +167,7 @@ export default function TheBookPage() {
               Two lives, one unexpected friendship
             </h2>
             <p className="mt-2 text-cream/75 leading-relaxed max-w-2xl">
-              Meet Pooja and Phil in full — their ambitions, their guardedness,
+              Meet Pooja and Phil in full &mdash; their ambitions, their guardedness,
               and where their story begins.
             </p>
           </div>

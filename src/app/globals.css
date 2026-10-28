@@ -94,3 +94,49 @@ select:focus-visible,
 .text-balance {
   text-wrap: balance;
 }
+
+
+/* Responsive editorial compositions: portrait assets keep their complete bounds. */
+.reader-hero{background-image:linear-gradient(90deg,var(--color-ivory) 36%,rgba(250,241,226,0.55) 46%,rgba(250,241,226,0) 60%),url('/images/backgrounds/01-hero-clean-illustrated.png');background-size:cover;background-position:center;background-repeat:no-repeat}
+.reader-hero-grid{display:grid;grid-template-columns:42% 58%;align-items:center;min-height:680px}
+.reader-hero-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:22px;padding:56px 0}
+.reader-hero-copy h1{font-size:clamp(2.8rem,4.4vw,4.7rem);font-weight:700;line-height:1.03;letter-spacing:-.035em}
+.reader-hero-art{position:relative;height:640px;min-width:0}
+.reader-hero-art img{position:absolute;object-fit:contain;object-position:bottom}
+.hero-pooja{width:52%;height:92%;left:0;bottom:10px}
+.hero-phil{width:58%;height:100%;right:0;bottom:0}
+.hero-book{width:33%;height:54%;left:34%;bottom:0;filter:drop-shadow(0 12px 12px #2c1b1238)}
+.reader-characters{padding:64px 0;background:var(--color-espresso) url('/images/backgrounds/03-characters-espresso.png') center/cover}
+.reader-character-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.reader-character{display:grid;grid-template-columns:minmax(0,48fr) minmax(0,52fr);align-items:center;gap:16px}
+.reader-character img{width:100%;height:310px;object-fit:contain;object-position:center bottom}
+.reader-banner{background:var(--color-paper);position:relative;color:var(--color-ink)}
+.reader-banner::before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,var(--color-paper) 15%,transparent 80%),var(--banner-image);background-size:cover;background-position:var(--banner-position)}
+.reader-banner-dark{background:var(--color-espresso);color:var(--color-cream)}
+.reader-banner-dark::before{background-image:linear-gradient(90deg,var(--color-espresso) 15%,transparent 85%),var(--banner-image)}
+.reader-banner-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;min-height:440px}
+.reader-banner-copy{display:flex;flex-direction:column;gap:20px;padding:48px 0;z-index:1}
+.reader-banner-art{height:400px;position:relative;display:flex;align-items:center;justify-content:center;min-width:0}
+.banner-book{height:360px;width:240px;display:flex;align-items:center;justify-content:center}
+.banner-book img{height:100%;width:100%;object-fit:contain}
+.banner-character-pair{display:flex;align-items:flex-end;justify-content:center;width:100%;height:100%;gap:12px;padding:20px 0}
+.banner-character-figure{position:relative;width:46%;height:100%}
+@media(max-width:767px){
+.reader-hero{background:none}
+.reader-hero-grid{grid-template-columns:1fr;min-height:0}
+.reader-hero-copy{padding:36px 0 20px;gap:18px;background:none}
+.reader-hero-copy h1{font-size:clamp(2.6rem,9.5vw,4.2rem)}
+.reader-hero-art{height:clamp(340px,92vw,500px);margin:0 -16px;background:url('/images/backgrounds/01-hero-clean-illustrated.png') center/cover}
+.hero-pooja{left:2%;width:46%;height:92%}.hero-phil{right:1%;width:50%;height:98%}.hero-book{left:35%;width:30%;height:52%}
+.reader-characters{padding:44px 0}
+.reader-character-grid{grid-template-columns:1fr;gap:32px;margin-top:28px}
+.reader-character{grid-template-columns:43% 1fr;gap:18px}
+.reader-character img{height:260px}
+.reader-banner::before{display:none}
+.reader-banner-grid{grid-template-columns:1fr;gap:0;min-height:0}
+.reader-banner-copy{padding:36px 0 28px;gap:16px}
+.reader-banner-art{height:210px;margin:0 -24px;background:var(--banner-image) var(--banner-mobile-position)/cover}
+.reader-banner-art.has-foreground{height:320px}
+.banner-book{height:290px;width:210px}
+.banner-character-pair{max-width:420px;padding:12px 20px}
+}

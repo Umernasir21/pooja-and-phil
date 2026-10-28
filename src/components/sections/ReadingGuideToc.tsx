@@ -11,9 +11,9 @@ function TocLinks({ onNavigate }: { onNavigate?: () => void }) {
           <a
             href={`#${slugify(group.title)}`}
             onClick={onNavigate}
-            className="flex items-baseline gap-2 py-1 text-sm text-ink/65 hover:text-orange transition-colors"
+            className="flex items-baseline gap-2 py-1.5 text-base text-ink/70 hover:text-orange transition-colors"
           >
-            <span className="text-xs text-orange/70 tabular-nums">
+            <span className="text-sm text-orange/70 tabular-nums">
               {String(index + 1).padStart(2, "0")}
             </span>
             {group.title}
@@ -32,7 +32,7 @@ export function ReadingGuideToc() {
         aria-label="Reading guide sections"
         className="hidden lg:block sticky top-28 self-start w-56 shrink-0 print:hidden"
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink/40 mb-3">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/40 mb-3">
           On this page
         </p>
         <TocLinks />

@@ -28,13 +28,13 @@ export function ReadingGuideList() {
             className="flex flex-col gap-5 scroll-mt-28 border-t border-ink/10 pt-10 first:border-t-0 first:pt-0"
           >
             <div>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">
+              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-orange">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h2 className="mt-2 font-serif-display text-2xl sm:text-3xl font-medium text-ink">
                 {group.title}
               </h2>
-              <p className="mt-2 text-ink/70 leading-relaxed max-w-2xl">
+              <p className="mt-3 text-lg text-ink/70 leading-relaxed max-w-2xl">
                 {group.intro}
               </p>
             </div>
@@ -49,7 +49,7 @@ export function ReadingGuideList() {
                 </summary>
                 <ol className="mt-5 flex flex-col gap-4 list-decimal pl-5 marker:text-orange">
                   {group.questions.map((q) => (
-                    <li key={q.question} className="text-lg leading-relaxed text-ink/80">
+                    <li key={q.question} className="text-xl leading-relaxed text-ink/80">
                       {q.question}
                     </li>
                   ))}
@@ -58,7 +58,7 @@ export function ReadingGuideList() {
             ) : (
               <ol className="flex flex-col gap-4 list-decimal pl-5 marker:text-orange">
                 {group.questions.map((q) => (
-                  <li key={q.question} className="text-lg leading-relaxed text-ink/80">
+                  <li key={q.question} className="text-xl leading-relaxed text-ink/80">
                     {q.question}
                   </li>
                 ))}

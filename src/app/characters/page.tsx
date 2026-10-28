@@ -81,34 +81,24 @@ export default function CharactersPage() {
         objectPosition={b.objectPosition}
         mobileObjectPosition={b.mobileObjectPosition}
         foreground={
-          <div className="hidden lg:block absolute inset-0 z-[1]">
-            <div className="absolute bottom-0 left-[58%] h-[88%] w-[20%] overflow-hidden">
+          <div className="banner-character-pair">
+            <div className="banner-character-figure">
               <Image
                 src={characters.pooja.image}
                 alt="Pooja"
                 fill
                 sizes="20vw"
-                className="object-cover object-top"
+                className="object-contain"
               />
             </div>
-            <div className="absolute bottom-0 left-[78%] h-[80%] w-[20%] overflow-hidden">
+            <div className="banner-character-figure">
               <Image
                 src={characters.phil.image}
                 alt="Phil"
                 fill
                 sizes="20vw"
-                className="object-cover object-top"
+                className="object-contain"
               />
-            </div>
-          </div>
-        }
-        mobileForeground={
-          <div className="absolute inset-0 flex items-end justify-center gap-2 bg-espresso">
-            <div className="relative h-[85%] w-[44%] overflow-hidden">
-              <Image src={characters.pooja.image} alt="Pooja" fill sizes="50vw" className="object-cover object-top" />
-            </div>
-            <div className="relative h-[78%] w-[44%] overflow-hidden">
-              <Image src={characters.phil.image} alt="Phil" fill sizes="50vw" className="object-cover object-top" />
             </div>
           </div>
         }
@@ -141,14 +131,14 @@ export default function CharactersPage() {
           </span>
 
           <div className="relative flex items-center gap-6 sm:gap-10">
-            <div className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-full ring-4 ring-ivory shadow-md">
-              <Image src={characters.pooja.image} alt="" fill sizes="96px" className="object-cover object-top" />
+            <div className="relative h-40 w-24 sm:h-48 sm:w-32">
+              <Image src={characters.pooja.image} alt="" fill sizes="96px" className="object-contain" />
             </div>
             <svg viewBox="0 0 120 24" className="h-4 w-20 sm:w-28 text-orange/60" fill="none" aria-hidden="true">
               <path d="M2 12c20-14 40 14 58 0s38-14 58 0" stroke="currentColor" strokeWidth="1.5" />
             </svg>
-            <div className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-full ring-4 ring-ivory shadow-md">
-              <Image src={characters.phil.image} alt="" fill sizes="96px" className="object-cover object-top" />
+            <div className="relative h-40 w-24 sm:h-48 sm:w-32">
+              <Image src={characters.phil.image} alt="" fill sizes="96px" className="object-contain" />
             </div>
           </div>
 

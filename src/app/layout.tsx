@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Source_Sans_3 } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/content/site";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  display: "swap",
+const playfair = localFont({
+ variable: "--font-playfair",
+ src: [{path:"./fonts/playfair-normal.woff2",weight:"500 900",style:"normal"},{path:"./fonts/playfair-italic.woff2",weight:"500 900",style:"italic"}],
+ display:"swap"
 });
-
-const sourceSans = Source_Sans_3({
-  variable: "--font-source-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
+const sourceSans = localFont({
+ variable:"--font-source-sans",
+ src:"./fonts/source-sans-normal.woff2",
+ weight:"400 700",
+ display:"swap"
 });
 
 export const metadata: Metadata = {

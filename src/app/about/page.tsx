@@ -43,13 +43,13 @@ export default function AboutPage() {
       <section className="bg-ivory py-16 sm:py-24">
         <Container className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
           <div className="lg:col-span-4 flex justify-center">
-            <div className="relative h-96 w-72 sm:h-[26rem] sm:w-80 overflow-hidden rounded-sm shadow-xl ring-4 ring-paper">
+            <div className="relative w-full max-w-[340px] aspect-[1362/2048] rounded-sm shadow-xl ring-4 ring-paper">
               <Image
                 src="/images/author/bansi-pattni.png"
                 alt="Bansi Pattni, author of Pooja and Phil"
                 fill
                 sizes="(min-width: 640px) 320px, 288px"
-                className="object-cover object-top"
+                className="object-contain"
                 priority
               />
             </div>
@@ -89,10 +89,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-[0.6fr_1fr] gap-10 items-center rounded-sm border-l-4 border-orange bg-paper/50 p-8 sm:p-10">
             <div className="flex justify-center">
               <Image
-                src="/images/books/book-standing-transparent.png"
+                src="/images/books/book-front-premium.png"
                 alt="Pooja and Phil, book cover standing upright"
-                width={1600}
-                height={2000}
+                width={1012}
+                height={1554}
                 className="h-auto w-full max-w-[220px] drop-shadow-xl"
               />
             </div>
@@ -110,9 +110,6 @@ export default function AboutPage() {
               <div className="mt-5 flex flex-wrap gap-4">
                 <Button href="/the-book" variant="primary">
                   Discover the Book
-                </Button>
-                <Button href="/media" variant="secondary">
-                  Media Resources
                 </Button>
               </div>
             </div>

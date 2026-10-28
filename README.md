@@ -53,9 +53,11 @@ Place new images in `public/images/<category>/` and reference them with `next/im
 
 ## Deployment
 
-This is a standard Next.js app and can be deployed anywhere Next.js is supported (a Node host, Vercel, or similar). It is **not** statically exported (`next export`) — it relies on the Next.js image optimizer at request time, which needs a Node runtime (or a platform's equivalent image-optimization layer).
+This is a standard Next.js app and can be deployed anywhere Next.js is supported (a Node host, Vercel, or similar). It is **not** statically exported (`next export`) — it has server-side API routes (contact form, newsletter, admin dashboard) and relies on the Next.js image optimizer at request time, both of which need a real Node runtime.
 
-Before going live, set the real production domain in `src/content/site.ts` (`site.domain`) — it feeds `metadataBase`, Open Graph URLs, `sitemap.xml` and `robots.txt`.
+**Deploying to Namecheap shared hosting:** see `DEPLOY.md` for the full cPanel/Passenger walkthrough — `server.js` and `next.config.mjs` (rather than `.ts`) exist specifically so this runs there without needing TypeScript at runtime.
+
+Before going live, set the real production domain in `src/content/site.ts` (`site.domain`) — it feeds `metadataBase`, Open Graph URLs, `sitemap.xml` and `robots.txt`. Also set a real `ADMIN_PASSWORD` environment variable — see `LAUNCH_CHECKLIST.md`.
 
 ## What's outstanding
 

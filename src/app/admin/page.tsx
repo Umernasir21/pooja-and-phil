@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { ADMIN_COOKIE_NAME, isValidSessionToken } from "@/lib/adminAuth";
 import { getContactMessages, getNewsletterSignups } from "@/lib/store";
+import { getAllPostsAdmin } from "@/lib/blog";
+import { getSettings } from "@/lib/settings";
 import { Container } from "@/components/ui/Container";
 import { LogoutButton } from "@/components/admin/LogoutButton";
+import { PricingForm } from "@/components/admin/PricingForm";
+import { DeletePostButton } from "@/components/admin/DeletePostButton";
 
 export const metadata: Metadata = {
   title: "Admin",
@@ -26,9 +31,11 @@ export default async function AdminPage() {
     redirect("/admin/login");
   }
 
-  const [newsletter, contact] = await Promise.all([
+  const [newsletter, contact, posts, settings] = await Promise.all([
     getNewsletterSignups(),
     getContactMessages(),
+    getAllPostsAdmin(),
+    getSettings(),
   ]);
 
   return (
@@ -46,6 +53,73 @@ export default async function AdminPage() {
           and will not persist across deployments on serverless hosting
           (e.g. Vercel) without a connected database. See
           LAUNCH_CHECKLIST.md.
+        </div>
+
+        <div className="mb-12">
+          <h2 className="font-serif-display text-xl font-medium text-ink mb-4">
+            Book Pricing
+          </h2>
+          <PricingForm initialPrices={settings.prices} />
+        </div>
+
+        <div className="mb-12">
+          <div className="flex items-center justify-between gap-4 mb-4">
+            <h2 className="font-serif-display text-xl font-medium text-ink">
+              Blog Posts ({posts.length})
+            </h2>
+            <Link
+              href="/admin/blog/new"
+              className="rounded-md bg-orange px-4 py-2 text-sm font-semibold text-cream hover:bg-rust transition-colors"
+            >
+              + New Post
+            </Link>
+          </div>
+          {posts.length === 0 ? (
+            <p className="text-ink/50 text-sm">No posts yet.</p>
+          ) : (
+            <div className="overflow-x-auto rounded-sm border border-ink/10">
+              <table className="w-full text-sm">
+                <thead className="bg-paper text-left">
+                  <tr>
+                    <th className="px-4 py-3 font-semibold text-ink/70">Title</th>
+                    <th className="px-4 py-3 font-semibold text-ink/70">Status</th>
+                    <th className="px-4 py-3 font-semibold text-ink/70">Published</th>
+                    <th className="px-4 py-3 font-semibold text-ink/70">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {posts.map((post) => (
+                    <tr key={post.slug} className="border-t border-ink/10">
+                      <td className="px-4 py-3 text-ink">{post.title}</td>
+                      <td className="px-4 py-3">
+                        <span
+                          className={`text-xs font-semibold uppercase tracking-wide ${
+                            post.published ? "text-rust" : "text-ink/40"
+                          }`}
+                        >
+                          {post.published ? "Published" : "Draft"}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-ink/60">
+                        {new Date(post.publishedAt).toLocaleDateString("en-GB", { dateStyle: "medium" })}
+                      </td>
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-4">
+                          <Link
+                            href={`/admin/blog/${post.slug}`}
+                            className="text-xs font-semibold text-orange hover:text-rust"
+                          >
+                            Edit
+                          </Link>
+                          <DeletePostButton slug={post.slug} title={post.title} />
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

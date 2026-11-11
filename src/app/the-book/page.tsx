@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { ReadingSample } from "@/components/sections/ReadingSample";
 import { synopsis, site, banners, characters } from "@/content/site";
+import { getSettings } from "@/lib/settings";
 
 export const metadata: Metadata = {
   title: "The Book — Synopsis, Themes & Free Chapter",
@@ -23,18 +24,33 @@ export const metadata: Metadata = {
   },
 };
 
-const bookJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Book",
-  name: site.bookTitle,
-  author: {
-    "@type": "Person",
-    name: site.name,
-  },
-  isbn: "979-8-950507-68-7",
-  inLanguage: "en-GB",
-  description: synopsis.short,
-};
+export const dynamic = "force-dynamic";
+
+function buildBookJsonLd(lowestPrice: string | null) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: site.bookTitle,
+    author: {
+      "@type": "Person",
+      name: site.name,
+    },
+    isbn: "979-8-950507-68-7",
+    inLanguage: "en-GB",
+    description: synopsis.short,
+    ...(lowestPrice
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: lowestPrice,
+            priceCurrency: "GBP",
+            url: site.amazonUrl,
+            availability: "https://schema.org/InStock",
+          },
+        }
+      : {}),
+  };
+}
 
 const themeIcons: Record<string, ReactNode> = {
   "Friendship across difference": (
@@ -61,8 +77,11 @@ const themeIcons: Record<string, ReactNode> = {
   ),
 };
 
-export default function TheBookPage() {
+export default async function TheBookPage() {
   const b = banners.theBook;
+  const { prices } = await getSettings();
+  const firstNumericPrice = prices.map((p) => p.price.match(/[\d.]+/)?.[0]).find(Boolean) ?? null;
+  const bookJsonLd = buildBookJsonLd(firstNumericPrice ?? null);
 
   return (
     <>
@@ -117,6 +136,16 @@ export default function TheBookPage() {
                 {para}
               </p>
             ))}
+
+            {prices.length > 0 ? (
+              <ul className="flex flex-wrap gap-x-6 gap-y-1 text-sm font-semibold text-ink/70">
+                {prices.map((p) => (
+                  <li key={p.format}>
+                    {p.format}: <span className="text-rust">{p.price}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
 
             <div className="flex flex-wrap gap-4">
               <Button href={site.amazonUrl} variant="primary" target="_blank" rel="noreferrer noopener">

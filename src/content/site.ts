@@ -25,6 +25,7 @@ export const headerNav = [
   { href: "/characters", label: "Characters" },
   { href: "/trailer", label: "Trailer" },
   { href: "/reading-guide", label: "Reading Guide" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -36,6 +37,7 @@ export const nav = [
   { href: "/characters", label: "Characters" },
   { href: "/trailer", label: "Trailer" },
   { href: "/reading-guide", label: "Reading Guide" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About the Author" },
   { href: "/contact", label: "Contact" },
 ] as const;

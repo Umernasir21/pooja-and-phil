@@ -33,15 +33,32 @@ npm start
 ```
 src/
   app/                 Routes (App Router). Each folder under app/ is a page.
+    blog/              Public blog: /blog (list) and /blog/[slug] (post)
+    admin/blog/        Admin-only blog CRUD UI (new post, edit/delete existing)
+    api/admin/         Admin-gated API routes (blog CRUD, settings/pricing)
   components/
     layout/             Header, Footer
     sections/           Page-specific composed sections (hero, trailer player, etc.)
+    admin/               Admin-only UI (pricing form, blog form, delete button)
     ui/                 Small reusable primitives (Button, Container, SectionHeading, PageHeader)
   content/
     site.ts             All site copy as typed, centralized data — edit copy here, not inside components
+  lib/
+    blog.ts             Blog post storage/CRUD (.data/blog.json), seeded with 3 launch posts
+    settings.ts         Editable site settings — currently just book pricing (.data/settings.json)
+    markdown.ts         Dependency-free markdown-lite renderer for blog post bodies
 public/
   images/               All production imagery, organized by category (backgrounds, characters, author, books, trailer, elements)
 ```
+
+### Editing the blog and book pricing
+
+Both are editable from `/admin` (password-gated, see below) without touching code:
+
+- **Book Pricing** — add one or more format/price rows (e.g. "Paperback — £9.99"); shown on `/the-book` and in its `Book` JSON-LD. Leave empty to show nothing (no price was ever confirmed by the publisher — see `CONTENT_SOURCE_NOTES.md`).
+- **Blog Posts** — create, edit and delete posts. Content is written in a small markdown-lite subset: `## Heading`, `- bullet`, `**bold**`, `*italic*`, `[text](url)` — see `src/lib/markdown.ts` for exactly what's supported. A post only appears on the public `/blog` once its "Published" checkbox is on.
+
+Both are stored as JSON files in the gitignored `.data/` folder — same persistence model as the newsletter/contact forms (see "Deployment" below).
 
 ### Editing copy
 

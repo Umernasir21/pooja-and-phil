@@ -140,3 +140,14 @@ select:focus-visible,
 .banner-book{height:290px;width:210px}
 .banner-character-pair{max-width:420px;padding:12px 20px}
 }
+
+/* Blog post body, rendered from markdown-lite (src/lib/markdown.ts). */
+.prose-blog{color:var(--color-ink);font-size:1.1rem;line-height:1.8}
+.prose-blog>*+*{margin-top:1.4em}
+.prose-blog h2{font-family:var(--font-serif);font-size:1.5rem;font-weight:600;margin-top:2em;color:var(--color-ink)}
+.prose-blog h3{font-family:var(--font-serif);font-size:1.2rem;font-weight:600;margin-top:1.75em;color:var(--color-ink)}
+.prose-blog ul{list-style:disc;padding-left:1.4em}
+.prose-blog li+li{margin-top:0.5em}
+.prose-blog strong{font-weight:700}
+.prose-blog a{color:var(--color-orange);text-decoration:underline;text-underline-offset:4px}
+.prose-blog a:hover{color:var(--color-rust)}

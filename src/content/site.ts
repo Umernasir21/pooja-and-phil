@@ -7,11 +7,10 @@ export const site = {
   name: "Bansi Pattni",
   bookTitle: "Pooja and Phil",
   tagline: "Different worlds. An unexpected friendship.",
-  // Verified 2026-10-28: poojaandphil.com does not resolve (connection
-  // failure). The live, resolving deployment is the Vercel URL below.
-  // Swap this back to the custom domain once it's actually live — see
-  // LAUNCH_CHECKLIST.md.
-  domain: "https://pooja-and-phil.vercel.app",
+  // Verified 2026-11-11: https://bansipattni.com returns 200 OK and serves
+  // this actual site (checked the page title directly) — this is the real
+  // Namecheap production domain, replacing the earlier Vercel placeholder.
+  domain: "https://bansipattni.com",
   // Verified 2026-10-28 by fetching the page directly: title "Pooja and
   // Phil", author "Pattni, Bansi", ISBN-13 9798950507687 — matches the
   // ISBN already used elsewhere on this site.

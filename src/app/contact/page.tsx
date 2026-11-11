@@ -24,7 +24,7 @@ export default function ContactPage() {
         eyebrow="Get in Touch"
         title="Contact"
         description="Questions about the book, press enquiries, or just want to say hello — send a message below."
-        background="/images/backgrounds/05-author-ivory-paper.png"
+        background="/images/backgrounds/05-author-ivory-paper.webp"
       />
 
       <section className="bg-ivory py-16 sm:py-24">

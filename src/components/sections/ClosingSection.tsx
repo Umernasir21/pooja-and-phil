@@ -7,7 +7,7 @@ export function ClosingSection() {
     <section className="relative overflow-hidden" aria-label="Begin reading">
       <div
         className="absolute inset-0 bg-cover bg-[position:70%_center]"
-        style={{ backgroundImage: "url(/images/backgrounds/06-closing-clean-sunset.png)" }}
+        style={{ backgroundImage: "url(/images/backgrounds/06-closing-clean-sunset.webp)" }}
         aria-hidden="true"
       />
       <Container className="relative py-12 sm:py-14 lg:py-16">

@@ -131,7 +131,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-[0.6fr_1fr] gap-10 items-center rounded-sm border-l-4 border-orange bg-paper/50 p-8 sm:p-10">
             <div className="flex justify-center">
               <Image
-                src="/images/books/book-front-premium.png"
+                src="/images/books/book-front-premium.webp"
                 alt="Pooja and Phil, book cover standing upright"
                 width={1012}
                 height={1554}

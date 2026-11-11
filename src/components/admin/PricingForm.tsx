@@ -58,19 +58,19 @@ export function PricingForm({ initialPrices }: { initialPrices: PriceEntry[] }) 
               placeholder="Format (e.g. Paperback)"
               value={row.format}
               onChange={(e) => updateRow(i, "format", e.target.value)}
-              className="flex-1 min-w-[140px] rounded-sm border border-ink/20 px-3 py-2 text-sm text-ink focus-visible:outline-3 focus-visible:outline-orange"
+              className="flex-1 min-w-[140px] rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 focus-visible:outline-2 focus-visible:outline-orange"
             />
             <input
               type="text"
               placeholder="Price (e.g. £9.99)"
               value={row.price}
               onChange={(e) => updateRow(i, "price", e.target.value)}
-              className="w-32 rounded-sm border border-ink/20 px-3 py-2 text-sm text-ink focus-visible:outline-3 focus-visible:outline-orange"
+              className="w-32 rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 focus-visible:outline-2 focus-visible:outline-orange"
             />
             <button
               type="button"
               onClick={() => removeRow(i)}
-              className="text-xs font-semibold text-ink/50 hover:text-rust"
+              className="text-xs font-semibold text-slate-400 hover:text-rust"
               aria-label={`Remove ${row.format || "row"}`}
             >
               Remove
@@ -83,7 +83,7 @@ export function PricingForm({ initialPrices }: { initialPrices: PriceEntry[] }) 
         <button
           type="button"
           onClick={addRow}
-          className="rounded-sm border border-ink/25 px-4 py-2 text-sm font-semibold text-ink/70 hover:border-orange hover:text-orange transition-colors"
+          className="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-600 hover:border-orange hover:text-orange transition-colors"
         >
           + Add format
         </button>
@@ -94,14 +94,14 @@ export function PricingForm({ initialPrices }: { initialPrices: PriceEntry[] }) 
         >
           {status === "loading" ? "Saving…" : "Save Pricing"}
         </button>
-        {status === "success" ? <span className="text-sm text-ink/60">Saved.</span> : null}
+        {status === "success" ? <span className="text-sm text-slate-500">Saved.</span> : null}
         {error ? (
           <span role="alert" className="text-sm text-rust">
             {error}
           </span>
         ) : null}
       </div>
-      <p className="text-xs text-ink/50">
+      <p className="text-xs text-slate-400">
         Shown on /the-book next to the purchase button. This is a display price only — it
         does not change what Amazon (or any retailer) actually charges.
       </p>

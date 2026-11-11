@@ -107,7 +107,7 @@ export default async function TheBookPage() {
         foreground={
           <div className="banner-book">
             <Image
-              src="/images/books/book-front-premium.png"
+              src="/images/books/book-front-premium.webp"
               alt="Pooja and Phil, book cover standing upright"
               width={1012}
               height={1554}
@@ -121,7 +121,7 @@ export default async function TheBookPage() {
         <Container className="grid grid-cols-1 sm:grid-cols-[0.45fr_0.55fr] gap-12 items-center">
           <div className="flex justify-center sm:justify-start">
             <Image
-              src="/images/books/book-front-premium.png"
+              src="/images/books/book-front-premium.webp"
               alt="Pooja and Phil, book cover standing upright"
               width={1012}
               height={1554}
@@ -165,7 +165,7 @@ export default async function TheBookPage() {
       <section className="relative overflow-hidden bg-paper" aria-label="At the heart of the story">
         <div className="hidden sm:block relative h-[340px]">
           <Image
-            src="/images/editorial/heart-of-story.png"
+            src="/images/editorial/heart-of-story.webp"
             alt=""
             fill
             sizes="100vw"
@@ -191,7 +191,7 @@ export default async function TheBookPage() {
           </Container>
           <div className="relative h-[180px]">
             <Image
-              src="/images/editorial/heart-of-story.png"
+              src="/images/editorial/heart-of-story.webp"
               alt=""
               fill
               sizes="100vw"

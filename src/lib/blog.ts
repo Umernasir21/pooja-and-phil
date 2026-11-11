@@ -47,7 +47,7 @@ const SEED_POSTS: BlogPost[] = [
     title: "The Story Behind Pooja and Phil: How Bansi Pattni Wrote Her Debut Novel",
     excerpt:
       "Lawyer by day, debut novelist by calling — how Bansi Pattni spent two years turning two voices in her head into Pooja and Phil, a novel about an unlikely friendship.",
-    coverImage: "/images/author/bansi-pattni.png",
+    coverImage: "/images/blog/the-story-behind-pooja-and-phil.webp",
     tags: ["Behind the Book", "Author"],
     seoTitle: "The Story Behind Pooja and Phil | Bansi Pattni",
     seoDescription:
@@ -82,7 +82,7 @@ What kept her going, by her own account, wasn't a guaranteed outcome — it was 
     title: "Why Pooja and Phil Is the Friendship Story Readers Need Right Now",
     excerpt:
       "Not every great story needs a romance at its centre. Pooja and Phil is built entirely around a friendship — and that's exactly why readers are connecting with it.",
-    coverImage: "/images/characters/pooja-transparent.png",
+    coverImage: "/images/blog/why-pooja-and-phil-friendship-story.webp",
     tags: ["Themes", "Why Read It"],
     seoTitle: "Why Pooja and Phil Is the Friendship Story Readers Need",
     seoDescription:
@@ -119,7 +119,7 @@ If you've been looking for a novel that takes friendship as seriously as most bo
     title: "5 Book Club Questions to Ask After Reading Pooja and Phil",
     excerpt:
       "Finished Pooja and Phil with your book club? Here are five spoiler-free discussion questions to get the conversation started — plus where to find more.",
-    coverImage: "/images/books/book-front-premium.png",
+    coverImage: "/images/blog/book-club-questions.webp",
     tags: ["Book Clubs", "Reading Guide"],
     seoTitle: "5 Book Club Questions for Pooja and Phil by Bansi Pattni",
     seoDescription:

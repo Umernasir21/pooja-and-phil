@@ -7,7 +7,7 @@ export function CharactersSection() {
   return (
     <section
       className="relative bg-espresso bg-cover bg-center"
-      style={{ backgroundImage: "url(/images/editorial/two-lives-friendship.png)" }}
+      style={{ backgroundImage: "url(/images/editorial/two-lives-friendship.webp)" }}
       aria-label="Meet the characters"
     >
       <Container className="py-16 sm:py-20">

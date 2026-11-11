@@ -8,7 +8,7 @@ export function TrailerTeaserSection() {
     <section className="relative bg-rust overflow-hidden" aria-label="Trailer">
       <div
         className="absolute inset-0 bg-cover bg-[position:60%_center]"
-        style={{ backgroundImage: "url(/images/backgrounds/04-trailer-clean-sunset.png)" }}
+        style={{ backgroundImage: "url(/images/backgrounds/04-trailer-clean-sunset.webp)" }}
         aria-hidden="true"
       />
 
@@ -16,7 +16,7 @@ export function TrailerTeaserSection() {
         <div className="grid grid-cols-1 sm:grid-cols-[0.55fr_1fr] gap-6 sm:gap-8 items-center">
           <div className="flex justify-center sm:justify-start">
             <Image
-              src="/images/books/book-standing-with-shadow.png"
+              src="/images/books/book-standing-with-shadow.webp"
               alt="Pooja and Phil, book cover standing upright"
               width={1600}
               height={2000}

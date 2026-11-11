@@ -15,8 +15,8 @@ export function HeroSection() {
    </div>
    <div className="reader-hero-art" aria-label="Pooja, Phil and the novel">
     <Image src="/images/characters/pooja-transparent.png" alt="Pooja" width={1089} height={1444} priority sizes="(max-width: 767px) 42vw, 24vw" className="hero-pooja" />
-    <Image src="/images/characters/phil-transparent.png" alt="Phil" width={980} height={1605} priority sizes="(max-width: 767px) 42vw, 24vw" className="hero-phil" />
-    <Image src="/images/books/book-front-premium.png" alt="Pooja and Phil by Bansi Pattni" width={1012} height={1554} priority sizes="(max-width: 767px) 25vw, 15vw" className="hero-book" />
+    <Image src="/images/characters/phil-transparent.webp" alt="Phil" width={980} height={1605} priority sizes="(max-width: 767px) 42vw, 24vw" className="hero-phil" />
+    <Image src="/images/books/book-front-premium.webp" alt="Pooja and Phil by Bansi Pattni" width={1012} height={1554} priority sizes="(max-width: 767px) 25vw, 15vw" className="hero-book" />
    </div>
   </Container>
  </section>;

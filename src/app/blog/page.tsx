@@ -34,7 +34,7 @@ export default async function BlogIndexPage() {
         eyebrow="Blog & News"
         title="Stories, notes and news."
         description="Behind-the-scenes writing notes, themes from the novel, and resources for book clubs and readers."
-        background="/images/backgrounds/02-book-ivory-paper.png"
+        background="/images/backgrounds/02-book-ivory-paper.webp"
       />
 
       <section className="bg-ivory py-16 sm:py-24">

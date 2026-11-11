@@ -20,6 +20,8 @@ export function Header() {
     if (open) setOpen(false);
   }
 
+  const isAdmin = pathname?.startsWith("/admin");
+
   useEffect(() => {
     if (!open) return;
     function onKey(e: KeyboardEvent) {
@@ -32,12 +34,14 @@ export function Header() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
+  if (isAdmin) return null;
+
   return (
     <header className="sticky top-0 z-50 bg-ivory/97 backdrop-blur border-b border-ink/10 print:hidden">
       <Container className="flex h-[72px] items-center justify-between gap-4">
         <Link href="/" className="shrink-0" aria-label="Bansi Pattni — home">
           <Image
-            src="/images/brand/bansi-pattni-logo.png"
+            src="/images/brand/bansi-pattni-logo.webp"
             alt="Bansi Pattni, Author"
             width={2000}
             height={672}

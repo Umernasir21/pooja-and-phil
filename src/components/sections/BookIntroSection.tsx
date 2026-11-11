@@ -9,7 +9,7 @@ export function BookIntroSection() {
         <div className="grid grid-cols-1 sm:grid-cols-[0.75fr_1fr] gap-8 sm:gap-10 items-center">
           <div className="flex justify-center sm:justify-start">
             <Image
-              src="/images/books/book-front-premium.png"
+              src="/images/books/book-front-premium.webp"
               alt="Pooja and Phil, book cover standing upright"
               width={1012}
               height={1554}

@@ -6,7 +6,7 @@ export default function NotFound() {
     <section className="relative flex min-h-[70vh] items-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/backgrounds/06-closing-clean-sunset.png)" }}
+        style={{ backgroundImage: "url(/images/backgrounds/06-closing-clean-sunset.webp)" }}
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-ink/40" aria-hidden="true" />

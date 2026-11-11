@@ -97,7 +97,7 @@ select:focus-visible,
 
 
 /* Responsive editorial compositions: portrait assets keep their complete bounds. */
-.reader-hero{background-image:linear-gradient(90deg,var(--color-ivory) 36%,rgba(250,241,226,0.55) 46%,rgba(250,241,226,0) 60%),url('/images/backgrounds/01-hero-clean-illustrated.png');background-size:cover;background-position:center;background-repeat:no-repeat}
+.reader-hero{background-image:linear-gradient(90deg,var(--color-ivory) 36%,rgba(250,241,226,0.55) 46%,rgba(250,241,226,0) 60%),url('/images/backgrounds/01-hero-clean-illustrated.webp');background-size:cover;background-position:center;background-repeat:no-repeat}
 .reader-hero-grid{display:grid;grid-template-columns:42% 58%;align-items:center;min-height:680px}
 .reader-hero-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:22px;padding:56px 0}
 .reader-hero-copy h1{font-size:clamp(2.8rem,4.4vw,4.7rem);font-weight:700;line-height:1.03;letter-spacing:-.035em}
@@ -106,7 +106,7 @@ select:focus-visible,
 .hero-pooja{width:52%;height:92%;left:0;bottom:10px}
 .hero-phil{width:58%;height:100%;right:0;bottom:0}
 .hero-book{width:33%;height:54%;left:34%;bottom:0;filter:drop-shadow(0 12px 12px #2c1b1238)}
-.reader-characters{padding:64px 0;background:var(--color-espresso) url('/images/backgrounds/03-characters-espresso.png') center/cover}
+.reader-characters{padding:64px 0;background:var(--color-espresso) url('/images/backgrounds/03-characters-espresso.webp') center/cover}
 .reader-character-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
 .reader-character{display:grid;grid-template-columns:minmax(0,48fr) minmax(0,52fr);align-items:center;gap:16px}
 .reader-character img{width:100%;height:310px;object-fit:contain;object-position:center bottom}
@@ -126,7 +126,7 @@ select:focus-visible,
 .reader-hero-grid{grid-template-columns:1fr;min-height:0}
 .reader-hero-copy{padding:36px 0 20px;gap:18px;background:none}
 .reader-hero-copy h1{font-size:clamp(2.6rem,9.5vw,4.2rem)}
-.reader-hero-art{height:clamp(340px,92vw,500px);margin:0 -16px;background:url('/images/backgrounds/01-hero-clean-illustrated.png') center/cover}
+.reader-hero-art{height:clamp(340px,92vw,500px);margin:0 -16px;background:url('/images/backgrounds/01-hero-clean-illustrated.webp') center/cover}
 .hero-pooja{left:2%;width:46%;height:92%}.hero-phil{right:1%;width:50%;height:98%}.hero-book{left:35%;width:30%;height:52%}
 .reader-characters{padding:44px 0}
 .reader-character-grid{grid-template-columns:1fr;gap:32px;margin-top:28px}

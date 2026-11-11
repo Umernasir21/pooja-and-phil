@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { site } from "@/content/site";
 
 const playfair = localFont({
@@ -63,7 +64,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main id="main-content" className="flex-1">
           {children}
         </main>
-        <Footer />
+        <SiteChrome>
+          <Footer />
+        </SiteChrome>
       </body>
     </html>
   );

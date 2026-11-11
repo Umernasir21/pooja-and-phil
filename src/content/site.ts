@@ -102,7 +102,7 @@ export const closingBand = {
 // ASSET_MAP.md for the discrepancy against the supplied placement table.
 export const banners = {
   theBook: {
-    image: "/images/editorial/01-book-story-banner.png",
+    image: "/images/editorial/01-book-story-banner.webp",
     theme: "light" as const,
     eyebrow: "The Book",
     heading: "A story about finding your own way.",
@@ -110,7 +110,7 @@ export const banners = {
     mobileObjectPosition: "80% 40%",
   },
   characters: {
-    image: "/images/editorial/02-characters-banner.png",
+    image: "/images/editorial/02-characters-banner.webp",
     theme: "dark" as const,
     eyebrow: "The Characters",
     heading: "Two lives. An unexpected connection.",
@@ -118,7 +118,7 @@ export const banners = {
     mobileObjectPosition: "75% center",
   },
   about: {
-    image: "/images/editorial/03-author-banner.png",
+    image: "/images/editorial/03-author-banner.webp",
     theme: "light" as const,
     eyebrow: "The Author",
     heading: "The author behind the friendship.",
@@ -126,7 +126,7 @@ export const banners = {
     mobileObjectPosition: "78% center",
   },
   readingGuide: {
-    image: "/images/editorial/04-reading-guide-banner.png",
+    image: "/images/editorial/04-reading-guide-banner.webp",
     theme: "light" as const,
     eyebrow: "Book Clubs",
     heading: "Good stories start conversations.",
@@ -134,7 +134,7 @@ export const banners = {
     mobileObjectPosition: "80% center",
   },
   trailer: {
-    image: "/images/editorial/05-trailer-cinema-banner.png",
+    image: "/images/editorial/05-trailer-cinema-banner.webp",
     theme: "dark" as const,
     eyebrow: "Watch",
     heading: "Step into their story.",
@@ -198,7 +198,7 @@ export const characters = {
     name: "Phil Rivers",
     age: "70s",
     role: "Self-made businessman. Founder of Ray and Co. Learning a new normal.",
-    image: "/images/characters/phil-transparent.png",
+    image: "/images/characters/phil-transparent.webp",
     bio: [
       "Phil Rivers built Ray and Co. from nothing — he left school at fourteen, answered to no one, and ran his company the same way he ran his life: on his own terms. A car accident six months before the story begins changed that. He now uses a wheelchair, and the control he spent a lifetime building suddenly feels a great deal harder to hold onto.",
       "He has already gone through two personal assistants by the time Pooja arrives, and he gives her no reason to expect she'll last any longer. Underneath the short temper, though, is a man guarding a lot more than his diary — a past he rarely discusses, and a wariness about letting anyone close enough to see it. What Pooja slowly earns, almost without either of them noticing, is his trust.",
@@ -225,8 +225,8 @@ export const trailer = {
   captionsSrc: null as string | null,
   posters: [
     "/images/trailer/trailer-poster-opening.png",
-    "/images/trailer/trailer-poster-scene-02.png",
-    "/images/trailer/trailer-poster-scene-03.png",
+    "/images/trailer/trailer-poster-scene-02.webp",
+    "/images/trailer/trailer-poster-scene-03.webp",
   ],
 } as const;
 

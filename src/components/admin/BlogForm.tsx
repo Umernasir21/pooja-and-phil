@@ -33,10 +33,32 @@ export function BlogForm({ mode, initialPost }: { mode: "create" | "edit"; initi
   const [published, setPublished] = useState(initialPost?.published ?? false);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [error, setError] = useState("");
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
 
   function handleTitleChange(value: string) {
     setTitle(value);
     if (!slugTouched) setSlug(slugify(value));
+  }
+
+  async function handleImageUpload(file: File) {
+    setUploading(true);
+    setUploadError("");
+    try {
+      const body = new FormData();
+      body.append("file", file);
+      const res = await fetch("/api/admin/upload", { method: "POST", body });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setUploadError(data.error || "Upload failed.");
+        return;
+      }
+      setCoverImage(data.path);
+    } catch {
+      setUploadError("Upload failed. Try again.");
+    } finally {
+      setUploading(false);
+    }
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -119,16 +141,51 @@ export function BlogForm({ mode, initialPost }: { mode: "create" | "edit"; initi
         />
       </label>
 
-      <label className={labelClasses}>
-        <span className={labelTextClasses}>Cover image path (e.g. /images/characters/pooja-transparent.png)</span>
+      <div className={labelClasses}>
+        <span className={labelTextClasses}>Cover image</span>
+
+        {coverImage ? (
+          // eslint-disable-next-line @next/next/no-img-element -- admin-only preview of an arbitrary uploaded/typed path
+          <img
+            src={coverImage}
+            alt=""
+            className="h-40 w-full max-w-xs rounded-sm border border-ink/15 object-cover"
+          />
+        ) : null}
+
+        <div className="flex flex-wrap items-center gap-3">
+          <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-ink/25 px-4 py-2 text-sm font-semibold text-ink/70 hover:border-orange hover:text-orange transition-colors">
+            {uploading ? "Uploading…" : "Upload image"}
+            <input
+              type="file"
+              accept="image/*"
+              disabled={uploading}
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) handleImageUpload(file);
+                e.target.value = "";
+              }}
+              className="sr-only"
+            />
+          </label>
+          <span className="text-xs text-ink/45">or paste a path below</span>
+        </div>
+
         <input
           type="text"
           value={coverImage}
           onChange={(e) => setCoverImage(e.target.value)}
+          placeholder="/images/characters/pooja-transparent.png"
           required
           className={fieldClasses}
         />
-      </label>
+
+        {uploadError ? (
+          <p role="alert" className="text-sm text-rust">
+            {uploadError}
+          </p>
+        ) : null}
+      </div>
 
       <label className={labelClasses}>
         <span className={labelTextClasses}>

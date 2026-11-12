@@ -26,13 +26,6 @@ export default async function AdminOverviewPage() {
         description="A snapshot of the site — signups, messages and content."
       />
 
-      <div className="rounded-xl border border-rust/30 bg-rust/5 p-4 mb-8 text-sm text-ink/70">
-        Submissions below are stored on this server&rsquo;s local filesystem
-        and will not persist across deployments on serverless hosting
-        (e.g. Vercel) without a connected database. See
-        LAUNCH_CHECKLIST.md.
-      </div>
-
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         <StatCard label="Newsletter signups" value={newsletter.length} />
         <StatCard label="Contact messages" value={contact.length} />

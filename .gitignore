@@ -39,6 +39,9 @@ yarn-error.log*
 # local submission storage (newsletter/contact) — see LAUNCH_CHECKLIST.md
 .data/
 
+# images uploaded from /admin at runtime — not part of the source tree
+public/images/uploads/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
